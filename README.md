@@ -37,11 +37,20 @@ Automation testing for [IKEA website](https://www.ikea.com/se/sv/).
 - 5 Scenario: Registration page validation
    - 5.1. Test case: Verify that the registration page correctly validates user input and creates a new user account.
      - 5.1.1 Step: Navigate to the registration form
-     - 5.1.2 Step: Select first option for becoming IKEA Family member
+     - 5.1.2 Step: Select second option for not becoming IKEA Family member
      - 5.1.3 Step: Fill all input fields with valid data
-     - 5.1.4 Step: Select first 2 checkboxes for IKEA Policy and Terms of Use
+     - 5.1.4 Step: Select on checkboxes for IKEA Policy and Terms of Use
      - 5.1.5 Step: Click on "Gå vidare" button
      - 5.1.6 Step: Verify that the user is redirected to a confirmation page
      - 5.1.7 Step: Verify that a new user account is created with the entered information
    
    Expected Result: The user's account is created successfully and the user can log in with the entered email address and password.
+
+- 6 Scenario: Login functionality
+   - 6.1. Test case: Verify that the login functionality works correctly and allows users to access their accounts.
+     - 6.1.1 Step: Navigate to login page
+     - 6.1.2 Step: Enter valid email and password
+     - 6.1.3 Step: Click the "Fortsätt" button
+     - 6.1.4 Step: Verify that the user is redirected to the homepage
+
+   Expected Result: No error messages are displayed, and the user is logged in successfully and the user is redirected to the homepage.
