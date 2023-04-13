@@ -8,7 +8,7 @@ Automation testing for [IKEA website](https://www.ikea.com/se/sv/).
      - 1.1.2 Step: Begin typing a search query, such as "bo"
      - 1.1.3 Step: Observe the suggested search queries that appear
    
-   Expected Result: The search bar displays a list of suggested search queries related to the user's input: "bord","boaxel","bokhylla", "bordslampa".
+   Expected Result: The search bar displays a list of suggested search queries related to the user's input: "bord", "boaxel", "bokhylla", "bordslampa".
  
 - 2 Scenario: Basic search in search bar
    - 2.1. Test case: Correct search results from a basic search query.
