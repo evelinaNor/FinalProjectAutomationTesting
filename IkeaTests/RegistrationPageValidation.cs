@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IkeaTests
 {
-    public class Class1
+    internal class RegistrationPageValidation
     {
     }
 }

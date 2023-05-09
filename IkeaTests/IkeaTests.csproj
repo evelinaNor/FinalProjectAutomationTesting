@@ -48,11 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AddToCartFunction.cs" />
+    <Compile Include="AutocompleteInSearchBar.cs" />
+    <Compile Include="BasicSearchInSearchBar.cs" />
+    <Compile Include="LoginFunctionalityValidation.cs" />
+    <Compile Include="MultipleFiltersInProductDisplayPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationPageValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IkeaFramework\IkeaFramework.csproj">
+      <Project>{7ee808d8-a83b-4a9c-af7b-207cef6d8586}</Project>
+      <Name>IkeaFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
