@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IkeaFramework
 {
-    internal class Driver
+    public class Driver
     {
         private static IWebDriver driver;
 
@@ -30,6 +30,11 @@ namespace IkeaFramework
         public static void ShutdownDriver()
         {
             driver.Quit();
+        }
+
+        internal static void NavigateToThePage(string url)
+        {
+            driver.Navigate().GoToUrl(url);
         }
     }
 }
