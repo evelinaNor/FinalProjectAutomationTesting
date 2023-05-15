@@ -15,5 +15,11 @@ namespace IkeaTests.BaseTests
         {
             Driver.InitializeDriver();
         }
+
+        [TearDown]
+        public void TearDown()
+        {
+            Driver.ShutdownDriver();
+        }
     }
 }
