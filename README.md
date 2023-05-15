@@ -23,7 +23,6 @@
      - 3.1.1 Step: Navigate to the product list filtering section
      - 3.1.2 Step: Choose price (Pris)
      - 3.1.3 Step: Choose any available color (Färg)
-     - 3.1.4 Step: Choose any available category (Kategori)
    
    Expected Result: Applied filters automatically sort products on the page according to chosen filters.
 
@@ -45,12 +44,13 @@
      - 5.1.4 Step: Tick on checkbox ("Jag har läst och förstått IKEA Integritetspolicy")
      - 5.1.5 Step: Click on go further (Gå vidare) button
    
-   Expected Result: The user's account is created successfully and the user is redirected to the homepage.
+   Expected Result: Side banner appears with information to verify email.
 
 - **6 Scenario: Login functionality validation**
    - 6.1. Test case: The login functionality allows users to access their accounts.
      - 6.1.1 Step: Open login page
-     - 6.1.2 Step: Enter valid email and password
-     - 6.1.3 Step: Click the continue (Fortsätt) button
+     - 6.1.2 Step: Enter valid email
+     - 6.1.3 Step: Enter valid password
+     - 6.1.4 Step: Click the continue (Fortsätt) button
 
    Expected Result: The user is logged in successfully and the user is redirected to the homepage.
