@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Xml.Linq;
 
 namespace IkeaFramework.Pages
 {
@@ -65,6 +66,22 @@ namespace IkeaFramework.Pages
                         throw exception;
                     }
                 }
+            }
+        }
+
+        internal static bool WaitForTheElementThatContainsTextValue(string locator, string expectedText)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(15));
+                IWebElement element = wait.Until(driver => driver.FindElement(By.XPath(locator)));
+
+                return element.Text.Contains(expectedText);
+            }
+
+            catch (NoSuchElementException)
+            {
+                return false;
             }
         }
     }

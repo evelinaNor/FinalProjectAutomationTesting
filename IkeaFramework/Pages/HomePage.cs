@@ -22,5 +22,6 @@ namespace IkeaFramework.Pages
             string acceptButton = "//*[@id='onetrust-accept-btn-handler']";
             Common.Click(acceptButton);
         }
+
     }
 }
