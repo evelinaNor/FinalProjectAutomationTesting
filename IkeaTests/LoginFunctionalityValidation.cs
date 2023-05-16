@@ -32,8 +32,8 @@ namespace IkeaTests
             LoginPage.EnterPassword(password);
             LoginPage.ClickOnButtonContinue();
 
-            bool isUsersNameDisplayedOnTheUsersIcon = LoginPage.UsersIconDisplayesUsersName(expectedUserName);
-            Assert.IsTrue(isUsersNameDisplayedOnTheUsersIcon);
+            bool isUserNameDisplayedOnTheUsersIcon = LoginPage.UsersIconDisplayesUsersName(expectedUserName);
+            Assert.IsTrue(isUserNameDisplayedOnTheUsersIcon);
 
         }
     }

@@ -16,7 +16,7 @@
      - 2.1.2 Step: Enter a basic search query "stol"
      - 2.1.3 Step: Press the search (Sök) icon
    
-   Expected Result: The search results display all products related to the search query "taklampa".
+   Expected Result: The search results display all products related to the search query "stol".
    
 - **3 Scenario: Multiple filters in product display page**
    - 3.1. Test case: Product filtering feature filters products accurately using multiple applied filters.
@@ -24,7 +24,7 @@
      - 3.1.2 Step: Choose price (Pris)
      - 3.1.3 Step: Choose green color (Färg)
    
-   Expected Result: Applied filters automatically sort products on the page according to chosen filters.
+   Expected Result: Products are filtered on the page according to chosen filters.
 
 - **4 Scenario: Add to cart function**
    - 4.1. Test case: User can add a product to their cart.
