@@ -30,10 +30,11 @@
    - 4.1. Test case: User can add a product to their cart.
      - 4.1.1 Step: Navigate to the first product page
      - 4.1.2 Step: Click on the first item in a product list
-     - 4.1.3 Step: Click on add to cart (Lägg i varukorg) button
-     - 4.1.4 Step: Navigate to the cart page by clicking continue to the cart (Fortsätt till varukorgen)
+     - 4.1.3 Step: Enter quantity "2"
+     - 4.1.4 Step: Click on add to cart (Lägg i varukorg) button
+     - 4.1.5 Step: Navigate to the cart page by clicking continue to the cart (Fortsätt till varukorgen)
    
-   Expected Result: The product is added to the cart and the cart summary reflects added product.
+   Expected Result: The cart summary reflects added products quantity.
 
 - **5 Scenario: Registration page validation**
    - 5.1. Test case: The registration page correctly validates user input and creates a new user account.
