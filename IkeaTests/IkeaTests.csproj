@@ -51,6 +51,7 @@
     <Compile Include="AddToCartFunction.cs" />
     <Compile Include="AutocompleteInSearchBar.cs" />
     <Compile Include="BaseTests\BaseTest.cs" />
+    <Compile Include="BaseTests\BaseTestWithChromeProfile.cs" />
     <Compile Include="BasicSearchInSearchBar.cs" />
     <Compile Include="LoginFunctionalityValidation.cs" />
     <Compile Include="MultipleFiltersInProductDisplayPage.cs" />

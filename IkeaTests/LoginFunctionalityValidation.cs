@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace IkeaTests
 {
-    internal class LoginFunctionalityValidation : BaseTest
+    internal class LoginFunctionalityValidation : BaseTestWithChromeProfile
     {
         [SetUp]
         public void OpenMainPageAndCookiesAcception()
@@ -32,8 +32,7 @@ namespace IkeaTests
             LoginPage.EnterPassword(password);
             LoginPage.ClickOnButtonContinue();
 
-            bool isUserNameDisplayedOnTheUsersIcon = LoginPage.UsersIconDisplayesUsersName(expectedUserName);
-            Assert.IsTrue(isUserNameDisplayedOnTheUsersIcon);
+            Assert.IsTrue(LoginPage.UsersIconDisplayesUsersName(expectedUserName));
 
         }
     }
