@@ -20,18 +20,10 @@ namespace IkeaFramework.Pages
 
         internal static bool WaitForTheElementToBeVisible(string locator)
         {
-            try
-            {
-                WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
-                wait.Until(driver => driver.FindElement(By.XPath(locator)));
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(driver => driver.FindElement(By.XPath(locator)));
 
-                return true;
-            }
-
-            catch (NoSuchElementException)
-            {
-                return false;
-            }     
+            return true;
         }
 
         internal static void SendKeys(string locator, string keys)
@@ -71,18 +63,15 @@ namespace IkeaFramework.Pages
 
         internal static bool WaitForTheElementThatContainsTextValue(string locator, string expectedText)
         {
-            try
-            {
-                WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(15));
-                IWebElement element = wait.Until(driver => driver.FindElement(By.XPath(locator)));
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(15));
+            IWebElement element = wait.Until(driver => driver.FindElement(By.XPath(locator)));
 
-                return element.Text.Contains(expectedText);
-            }
+            return element.Text.Contains(expectedText);
+        }
 
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
+        internal static string GetElementAttributeValue(string locator, string attributeName)
+        {
+            return GetElement(locator).GetAttribute(attributeName);
         }
     }
 }
