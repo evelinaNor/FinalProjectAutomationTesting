@@ -5,36 +5,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Interactions;
+using System.Threading;
 
 namespace IkeaFramework
 {
     public class Driver
     {
-        private static IWebDriver driver;
+        private static ThreadLocal<IWebDriver> driver = new ThreadLocal<IWebDriver>();
 
         public static void InitializeDriver()
         {
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--window-size=1920,1080");
+            driver.Value = new ChromeDriver(options);
+        }
+
+        public static void InitializeDriver(string userDataDir, string profileDir)
+        {
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument($"--user-data-dir={userDataDir}");
+            options.AddArgument($"--profile-directory={profileDir}");
+            driver.Value = new ChromeDriver(options);
         }
 
         internal static IWebDriver GetDriver()
         {
-            return driver;
+            return driver.Value;
         }
 
         internal static void OpenPage(string url)
         {
-            driver.Url = url;
+            driver.Value.Url = url;
         }
 
         public static void ShutdownDriver()
         {
-            driver.Quit();
+            driver.Value.Quit();
         }
 
         internal static void NavigateToThePage(string url)
         {
-            driver.Navigate().GoToUrl(url);
+            driver.Value.Navigate().GoToUrl(url);
         }
     }
 }
