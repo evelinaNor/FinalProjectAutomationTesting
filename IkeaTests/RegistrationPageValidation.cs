@@ -39,8 +39,7 @@ namespace IkeaTests
             RegistrationPage.ClickOnCheckbox_TermsAndConditions();
             RegistrationPage.ClickOnGoFurtherButton();
 
-           bool sideBannerIsDisplayed = RegistrationPage.CheckIfSideBannerIsDisplayed();
-           Assert.IsTrue(sideBannerIsDisplayed);
+           Assert.IsTrue(RegistrationPage.SideBannerIsDisplayed());
         }
     }
 }

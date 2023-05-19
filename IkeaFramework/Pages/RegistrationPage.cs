@@ -72,7 +72,7 @@ namespace IkeaFramework.Pages
             Common.ScrollUntilElementIsClickable(locator);
         }
 
-        public static bool CheckIfSideBannerIsDisplayed()
+        public static bool SideBannerIsDisplayed()
         {
             string locator = "//*[@id='root']/div/div[3]/div/form/div[22]/div[3]/div/div[2]";
             Common.WaitForTheElementToBeVisible(locator);
