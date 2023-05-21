@@ -30,18 +30,17 @@ namespace IkeaFramework.Pages
 
         public static bool ProductHeaderSectionContainsColorText(string expectedResult)
         {
-            string locatorOfProductList = "//*[contains(@class,'plp-product-list__products')]";
+            string locatorOfProductList = "//*[@data-testid='plp-product-card']";
             List<IWebElement> products = Common.GetElements(locatorOfProductList);
 
             foreach (IWebElement product in products)
             {
-                Common.ScrollUntilElementIsClickable(locatorOfProductList);
+                Actions.CtrlShiftClickOnElement(product);
 
-                string locator = "//span[@class='pip-header-section__description-text']";
-                bool containsExpectedText = Common.WaitForTheElementThatContainsTextValue(expectedResult, locator);
-
-                Driver.GetDriver().Navigate().Back();
-                Thread.Sleep(5000);
+                string locator = "//*[@id='pip-buy-module-content']//*[@class='pip-header-section__description-text']";
+                bool containsExpectedText = Common.GetElementsTextValueInTheNewTab(expectedResult, locator);
+                Common.CloseTab();
+                Common.SwitchToDefaultContent();
 
                 if (!containsExpectedText)
                     return false;

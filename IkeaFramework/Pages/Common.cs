@@ -71,14 +71,43 @@ namespace IkeaFramework.Pages
         internal static bool WaitForTheElementThatContainsTextValue(string locator, string expectedText)
         {
             WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(15));
-            IWebElement element = wait.Until(driver => driver.FindElement(By.XPath(locator)));
 
-            return element.Text.Contains(expectedText);
+            return wait.Until(driver => driver.FindElement(By.XPath(locator)).Text.Contains(expectedText)); ;
+        }
+
+        internal static bool GetElementsTextValueInTheNewTab(string locator, string expectedText)
+        {
+            List<string> handles = Common.GetWindowHandles();
+            Common.SwitchToWindowByHandle(handles.Last());
+
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(15));
+            return wait.Until(driver => driver.FindElement(By.XPath(locator)).Text.Contains(expectedText));
         }
 
         internal static string GetElementAttributeValue(string locator, string attributeName)
         {
             return GetElement(locator).GetAttribute(attributeName);
         }
+
+        internal static List<string> GetWindowHandles()
+        {
+            return Driver.GetDriver().WindowHandles.ToList();
+        }
+
+        internal static void SwitchToWindowByHandle(string handle)
+        {
+            Driver.GetDriver().SwitchTo().Window(handle);
+        }
+
+        internal static void CloseTab()
+        {
+            Driver.GetDriver().Close();
+        }
+
+        internal static void SwitchToDefaultContent()
+        {
+            Driver.GetDriver().SwitchTo().DefaultContent();
+        }
+
     }
 }
