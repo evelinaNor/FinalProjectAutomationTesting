@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,9 @@ namespace IkeaFramework.Pages
 
         public static void ClickOnButtonContinue()
         {
+            Cookie cookie = new Cookie("_cs_c", "1");
+            Driver.GetDriver().Manage().Cookies.AddCookie(cookie);
+
             Thread.Sleep(TimeSpan.FromSeconds(3));
             string locator = "//*[@id='root']/div/div[3]/div[1]/form/button";
             Common.Click(locator);

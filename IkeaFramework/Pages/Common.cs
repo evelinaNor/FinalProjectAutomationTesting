@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -77,9 +78,6 @@ namespace IkeaFramework.Pages
 
         internal static bool GetElementsTextValueInTheNewTab(string locator, string expectedText)
         {
-            List<string> handles = Common.GetWindowHandles();
-            Common.SwitchToWindowByHandle(handles.Last());
-
             WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(15));
             return wait.Until(driver => driver.FindElement(By.XPath(locator)).Text.Contains(expectedText));
         }
@@ -109,5 +107,39 @@ namespace IkeaFramework.Pages
             Driver.GetDriver().SwitchTo().DefaultContent();
         }
 
+        internal static void CtrlShiftClickOnElement(IWebElement element)
+        {
+            Actions actions = new Actions(Driver.GetDriver());
+            actions.KeyDown(Keys.Control);
+            actions.KeyDown(Keys.Shift);
+            actions.Click(element);
+            actions.KeyUp(Keys.Control);
+            actions.KeyUp(Keys.Shift);
+            actions.Perform();
+        }
+
+        internal static string GetElementText(string locator)
+        {
+            return GetElement(locator).Text;
+        }
+
+        internal static string GetNewWindowHandle(List<string> notNewHandles)
+        {
+            List<string> currentWindowHandles = GetWindowHandles();
+
+            foreach(string handle in currentWindowHandles)
+            {
+                bool newHandleFound = false;
+                foreach(string oldHandle in notNewHandles)
+                {
+                    if (handle != oldHandle)
+                    {
+                        return handle;
+                    }
+                }
+            }
+
+            throw new Exception("No new handle found");
+        }
     }
 }

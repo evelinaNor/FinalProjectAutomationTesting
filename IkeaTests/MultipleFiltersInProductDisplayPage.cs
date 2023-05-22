@@ -26,14 +26,11 @@ namespace IkeaTests
             string expectedResult = "svart";
 
             MultipleFiltersInProductPage.OpenProductListPage();
-            MultipleFiltersInProductPage.ClickOnTheColorFilter();
-            Thread.Sleep(3000);
-            MultipleFiltersInProductPage.SelectColorFilter(expectedResult);
-            MultipleFiltersInProductPage.ClickOnTheColorFilterAgainToCloseIt();
+            MultipleFiltersInProductPage.ToggleTheColorFilter();
+            MultipleFiltersInProductPage.SelectColorInTheFilter(expectedResult);
+            MultipleFiltersInProductPage.ToggleTheColorFilter();
             bool containsExpectedText = MultipleFiltersInProductPage.ProductHeaderSectionContainsColorText(expectedResult);
             Assert.IsTrue(containsExpectedText);
-
         }
-
     }
 }

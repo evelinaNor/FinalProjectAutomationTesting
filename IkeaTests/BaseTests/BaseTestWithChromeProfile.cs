@@ -13,7 +13,7 @@ namespace IkeaTests.BaseTests
         [SetUp]
         public void SetUp()
         {
-            string userDataDir = "C:\\Program Files\\Google\\Chrome\\Application";
+            string userDataDir = "C:\\Users\\Evelina\\AppData\\Local\\Google\\Chrome\\User Data";
             string profileDir = "Profile 6";
             Driver.InitializeDriver(userDataDir, profileDir);
         }

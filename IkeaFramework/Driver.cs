@@ -46,7 +46,7 @@ namespace IkeaFramework
 
         internal static void NavigateToThePage(string url)
         {
-            driver.Value.Navigate().GoToUrl(url);
+            driver.Value.Url = url;
         }
     }
 }

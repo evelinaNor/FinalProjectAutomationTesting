@@ -12,6 +12,9 @@ namespace IkeaFramework.Pages
         public static void Open()
         {
             Driver.OpenPage("https://www.ikea.com/se/sv/");
+            Cookie cookie = new Cookie("_cs_c", "1");
+            Driver.GetDriver().Manage().Cookies.AddCookie(cookie);
+            //Driver.GetDriver().Manage().Cookies.DeleteAllCookies();
         }
 
         public static void AcceptCookies()

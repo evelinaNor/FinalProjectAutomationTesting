@@ -15,7 +15,7 @@ namespace IkeaTests
         public void OpenMainPageAndCookiesAcception()
         {
             HomePage.Open();
-            HomePage.AcceptCookies();
+           // HomePage.AcceptCookies();
         }
 
         [Test]

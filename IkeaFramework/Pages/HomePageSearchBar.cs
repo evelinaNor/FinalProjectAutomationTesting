@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace IkeaFramework.Pages
 {
-    internal class HomePageSearchBar
+    public class HomePageSearchBar
     {
+        public static void ClickOnTheSearchBar()
+        {
+            string locator = "//*[@data-id='box-mount']";
+            Common.Click(locator);
+        }
+
+        public static void EnterSearchedItemPartialTitle(string expectedResult)
+        {
+            string locator = "";
+            Common.SendKeys(locator, expectedResult);
+        }
+
+        public static object SuggestedListOfItemsContainsPartialyInputedText(string expectedResult)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
