@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.DevTools.V111.WebAuthn;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +18,29 @@ namespace IkeaFramework.Pages
 
         public static void EnterSearchedItemPartialTitle(string expectedResult)
         {
-            string locator = "";
+            string locator = "//*[@id='ikea-search-input']";
             Common.SendKeys(locator, expectedResult);
         }
 
-        public static object SuggestedListOfItemsContainsPartialyInputedText(string expectedResult)
+        public static bool SuggestedListOfItemsContainsPartialyInputedText(string expectedResult)
         {
-            throw new NotImplementedException();
+            string locatorOfSuggestions = "//*[@id='search-suggestions']//*[contains(@class,'universal-item__title with-autocomplete-icon')]";
+            Common.WaitForTheElementToBeVisible(locatorOfSuggestions);
+
+            List<IWebElement> products = Common.GetElements(locatorOfSuggestions);
+
+            foreach (IWebElement product in products)
+            {
+                string locator = "//*[@id='search-suggestions']/li/a";
+                string actualText = Common.GetElementAttributeValue(locator,"aria-label");
+                if (!actualText.Contains(expectedResult))
+                {
+                    string errorMessage = $"Doesn't contain {expectedResult} text";
+                    throw new Exception(errorMessage);
+                }
+            }
+
+            return true;
         }
     }
 }

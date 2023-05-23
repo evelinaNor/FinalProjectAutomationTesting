@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace IkeaTests
@@ -21,14 +22,11 @@ namespace IkeaTests
         [Test]
         public void AutocompleteSuggestionsWithPartialSearchedItemInput()
         {
-            string expectedResult = "bo";
-
-            HomePageSearchBar.ClickOnTheSearchBar();
+            string expectedResult = "mat";
             HomePageSearchBar.EnterSearchedItemPartialTitle(expectedResult);
 
-            Assert.Equals(expectedResult, HomePageSearchBar.SuggestedListOfItemsContainsPartialyInputedText(expectedResult));
-            
+            bool containsExpectedText = HomePageSearchBar.SuggestedListOfItemsContainsPartialyInputedText(expectedResult);
+            Assert.IsTrue(containsExpectedText);        
         }
-
     }
 }
