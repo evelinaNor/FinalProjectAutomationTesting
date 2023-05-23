@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace IkeaFramework.Pages
 {
-    public class MultipleFiltersInProductPage
+    public class ProductFilteringByColorPage
     {     
         public static void OpenProductListPage()
         {
@@ -18,8 +18,11 @@ namespace IkeaFramework.Pages
         public static void SelectColorInTheFilter(string expectedResult)
         {
             string locator = $"//*[@id='{expectedResult}']";
+            string toggleFilterLocator = "/html/body/main/div/div/div[5]/div[1]/div/div[1]/div[2]/div/button[4]";
+
             Common.WaitForTheElementToBeVisible(locator);
             Common.Click(locator);
+            Common.Click(toggleFilterLocator);
         }
         public static void ClickOnTheColorFilterAgainToCloseIt()
         {

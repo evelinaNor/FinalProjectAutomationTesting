@@ -54,7 +54,7 @@
     <Compile Include="BaseTests\BaseTestWithChromeProfile.cs" />
     <Compile Include="BasicSearchInSearchBar.cs" />
     <Compile Include="LoginFunctionalityValidation.cs" />
-    <Compile Include="MultipleFiltersInProductDisplayPage.cs" />
+    <Compile Include="ProductFilteringByColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrationPageValidation.cs" />
   </ItemGroup>

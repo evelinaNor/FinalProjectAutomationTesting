@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace IkeaTests
 {
-    internal class MultipleFiltersInProductDisplayPage : BaseTest
+    internal class ProductFilteringByColor : BaseTest
     {
         [SetUp]
         public void OpenMainPageAndCookiesAcception()
@@ -25,11 +25,11 @@ namespace IkeaTests
         {
             string expectedResult = "svart";
 
-            MultipleFiltersInProductPage.OpenProductListPage();
-            MultipleFiltersInProductPage.ToggleTheColorFilter();
-            MultipleFiltersInProductPage.SelectColorInTheFilter(expectedResult);
-            MultipleFiltersInProductPage.ToggleTheColorFilter();
-            bool containsExpectedText = MultipleFiltersInProductPage.ProductHeaderSectionContainsColorText(expectedResult);
+            ProductFilteringByColorPage.OpenProductListPage();
+            ProductFilteringByColorPage.ToggleTheColorFilter();
+            ProductFilteringByColorPage.SelectColorInTheFilter(expectedResult);
+
+            bool containsExpectedText = ProductFilteringByColorPage.ProductHeaderSectionContainsColorText(expectedResult);
             Assert.IsTrue(containsExpectedText);
         }
     }
