@@ -52,11 +52,11 @@
     <Compile Include="AutocompleteInSearchBar.cs" />
     <Compile Include="BaseTests\BaseTest.cs" />
     <Compile Include="BaseTests\BaseTestWithChromeProfile.cs" />
-    <Compile Include="BasicSearchInSearchBar.cs" />
     <Compile Include="LoginFunctionalityValidation.cs" />
     <Compile Include="ProductFilteringByColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrationPageValidation.cs" />
+    <Compile Include="SortProductsByLowToHighPrice.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
