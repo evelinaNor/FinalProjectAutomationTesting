@@ -45,5 +45,15 @@ namespace IkeaFramework.Pages
 
             return true;
         }
+
+        public static void Logout()
+        {
+            string iconLocator = "//*[@id='loyalty-modal-button']/span";
+            Common.Click(iconLocator);
+
+            string logOutButton = "//*[@id='header__button']/span";
+            Common.WaitForTheElementToBeVisible(logOutButton);
+            Common.Click(logOutButton);
+        }
     }
 }

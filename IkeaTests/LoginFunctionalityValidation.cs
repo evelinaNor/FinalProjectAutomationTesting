@@ -15,7 +15,6 @@ namespace IkeaTests
         public void OpenMainPageAndCookiesAcception()
         {
             HomePage.Open();
-           // HomePage.AcceptCookies();
         }
 
         [Test]
@@ -31,9 +30,9 @@ namespace IkeaTests
             LoginPage.EnterEmail(email);
             LoginPage.EnterPassword(password);
             LoginPage.ClickOnButtonContinue();
-
+    
             Assert.IsTrue(LoginPage.UsersIconDisplayesUsersName(expectedUserName));
-
+            LoginPage.Logout();
         }
     }
 }
