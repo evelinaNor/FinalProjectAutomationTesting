@@ -2,7 +2,8 @@
 using OpenQA.Selenium;
 using System.Threading;
 using OpenQA.Selenium.Edge;
-
+using System.IO;
+using System;
 
 namespace IkeaFramework
 {
@@ -50,6 +51,19 @@ namespace IkeaFramework
         internal static void NavigateToThePage(string url)
         {
             driver.Value.Url = url;
+        }
+
+        public static string TakeScreenshot(string methodName)
+        {
+            string screenshotDirectoryPath = $"{AppDomain.CurrentDomain.BaseDirectory}Screenshots";
+            string screenshotName = $"{methodName}-{DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss")}.png";
+            string screenshotFilePath = $"{screenshotDirectoryPath}\\{screenshotName}";
+
+            Directory.CreateDirectory(screenshotDirectoryPath);
+            Screenshot screenshot = ((ITakesScreenshot)driver.Value).GetScreenshot();
+            screenshot.SaveAsFile($"{screenshotFilePath}", ScreenshotImageFormat.Png);
+
+            return screenshotFilePath;
         }
     }
 }
