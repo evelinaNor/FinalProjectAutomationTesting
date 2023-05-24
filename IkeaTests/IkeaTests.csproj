@@ -52,6 +52,7 @@
     <Compile Include="AutocompleteInSearchBar.cs" />
     <Compile Include="BaseTests\BaseTest.cs" />
     <Compile Include="BaseTests\BaseTestWithChromeProfile.cs" />
+    <Compile Include="BaseTests\BaseTestWithEdge.cs" />
     <Compile Include="LoginFunctionalityValidation.cs" />
     <Compile Include="ProductFilteringByColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

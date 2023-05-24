@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace IkeaFramework.Pages
 {
     public class ProductSortingByPricePage
-    {    
+    {
         public static void OpenListOfProducts()
         {
             Driver.NavigateToThePage("https://www.ikea.com/se/sv/search/?group=Allt%20f%C3%B6r%20studenten");
@@ -39,9 +39,8 @@ namespace IkeaFramework.Pages
 
             foreach (IWebElement product in products)
             {
-                string productPriceLocator = "//*[@class='plp-price__integer']";
+                string productPriceLocator = "//*[@class='pip-price__integer']";
 
-                Common.WaitForTheElementToBeVisible(productPriceLocator);
                 string priceText = Common.GetElementText(productPriceLocator);
                 double price = double.Parse(priceText);
                 prices.Add(price);

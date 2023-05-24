@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace IkeaTests.BaseTests
 {
-    internal class BaseTest
+    internal class BaseTestWithEdge
     {
         [SetUp]
         public void SetUp()
         {
-            Driver.InitializeChromeDriver();
+            Driver.InitializeEdgeDriver();
         }
 
         [TearDown]

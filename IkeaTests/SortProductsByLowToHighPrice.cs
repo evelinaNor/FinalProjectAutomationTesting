@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace IkeaTests
 {
-    internal class SortProductsByLowToHighPrice : BaseTest
+    internal class SortProductsByLowToHighPrice : BaseTestWithEdge
     {
         [SetUp]
 

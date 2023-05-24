@@ -127,10 +127,10 @@ namespace IkeaFramework.Pages
         {
             List<string> currentWindowHandles = GetWindowHandles();
 
-            foreach(string handle in currentWindowHandles)
+            foreach (string handle in currentWindowHandles)
             {
                 bool newHandleFound = false;
-                foreach(string oldHandle in notNewHandles)
+                foreach (string oldHandle in notNewHandles)
                 {
                     if (handle != oldHandle)
                     {

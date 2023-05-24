@@ -1,12 +1,8 @@
 ﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium.Interactions;
 using System.Threading;
+using OpenQA.Selenium.Edge;
+
 
 namespace IkeaFramework
 {
@@ -14,11 +10,18 @@ namespace IkeaFramework
     {
         private static ThreadLocal<IWebDriver> driver = new ThreadLocal<IWebDriver>();
 
-        public static void InitializeDriver()
+        public static void InitializeChromeDriver()
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--window-size=1920,1080");
             driver.Value = new ChromeDriver(options);
+        }
+
+        public static void InitializeEdgeDriver()
+        {
+            EdgeOptions options = new EdgeOptions();
+            options.AddArgument("--window-size=1920,1080");
+            driver.Value = new EdgeDriver(options);
         }
 
         public static void InitializeDriver(string userDataDir, string profileDir)
