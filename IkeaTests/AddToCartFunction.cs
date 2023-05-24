@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace IkeaTests
 {
-    internal class AddToCartFunction : BaseTest
+    internal class AddToCartFunction : BaseTestWithChrome
     {
         [SetUp]
         public void OpenMainPageAndCookiesAcception()
@@ -20,13 +20,12 @@ namespace IkeaTests
         }
 
         [Test]
-
         public void AddToCartFunctionality()
         {
             string expectedQuantity = "2";
 
             AddToCart.OpenProductListPage();
-            AddToCart.ClickOnTheFirstProduct();
+            AddToCart.ClickOnTheProduct();
             AddToCart.ClickOnTheQantityInput();
             AddToCart.EnterQuantity(expectedQuantity);
             AddToCart.ClickOnAddToCartButton();

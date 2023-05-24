@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace IkeaTests
 {
-    internal class AutocompleteInSearchBar : BaseTest
+    internal class AutocompleteInSearchBar : BaseTestWithChrome
     {
         [SetUp]
         public void OpenMainPageAndCookiesAcception()
@@ -25,7 +25,7 @@ namespace IkeaTests
             string expectedResult = "mat";
             HomePageSearchBar.EnterSearchedItemPartialTitle(expectedResult);
 
-            bool containsExpectedText = HomePageSearchBar.SuggestedListOfItemsContainsPartialyInputedText(expectedResult);
+            bool containsExpectedText = HomePageSearchBar.SuggestedListOfItemsContainPartialyInputedText(expectedResult);
             Assert.IsTrue(containsExpectedText);        
         }
     }

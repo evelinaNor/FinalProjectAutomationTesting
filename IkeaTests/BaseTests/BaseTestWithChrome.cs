@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IkeaTests.BaseTests
 {
-    internal class BaseTest
+    internal class BaseTestWithChrome
     {
         [SetUp]
         public void SetUp()

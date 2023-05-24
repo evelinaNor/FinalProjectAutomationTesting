@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace IkeaTests
 {
-    internal class ProductFilteringByColor : BaseTest
+    internal class ProductFilteringByColor : BaseTestWithChrome
     {
         [SetUp]
         public void OpenMainPageAndCookiesAcception()
@@ -20,14 +20,13 @@ namespace IkeaTests
         }
 
         [Test]
-
         public void ProductColorFilterSelectionSortsProductsAccordingly()
         {
             string expectedResult = "svart";
 
             ProductFilteringByColorPage.OpenProductListPage();
             ProductFilteringByColorPage.ToggleTheColorFilter();
-            ProductFilteringByColorPage.SelectColorInTheFilter(expectedResult);
+            ProductFilteringByColorPage.SelectColor(expectedResult);
 
             bool containsExpectedText = ProductFilteringByColorPage.ProductHeaderSectionContainsColorText(expectedResult);
             Assert.IsTrue(containsExpectedText);

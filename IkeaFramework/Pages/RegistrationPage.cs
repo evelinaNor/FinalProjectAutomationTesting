@@ -61,9 +61,9 @@ namespace IkeaFramework.Pages
 
         public static void ClickOnCheckbox_TermsAndConditions()
         {
-            string locator = "//*[@id='regular-signup-form-acceptPrivacyPolicy']"; 
+            string locator = "//*[@id='regular-signup-form-acceptPrivacyPolicy']";
             Common.ScrollUntilElementIsClickable(locator);
-            
+
         }
 
         public static void ClickOnGoFurtherButton()

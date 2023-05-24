@@ -76,12 +76,6 @@ namespace IkeaFramework.Pages
             return wait.Until(driver => driver.FindElement(By.XPath(locator)).Text.Contains(expectedText)); ;
         }
 
-        internal static bool GetElementsTextValueInTheNewTab(string locator, string expectedText)
-        {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(15));
-            return wait.Until(driver => driver.FindElement(By.XPath(locator)).Text.Contains(expectedText));
-        }
-
         internal static string GetElementAttributeValue(string locator, string attributeName)
         {
             return GetElement(locator).GetAttribute(attributeName);
@@ -102,11 +96,6 @@ namespace IkeaFramework.Pages
             Driver.GetDriver().Close();
         }
 
-        internal static void SwitchToDefaultContent()
-        {
-            Driver.GetDriver().SwitchTo().DefaultContent();
-        }
-
         internal static void CtrlShiftClickOnElement(IWebElement element)
         {
             Actions actions = new Actions(Driver.GetDriver());
@@ -121,25 +110,6 @@ namespace IkeaFramework.Pages
         internal static string GetElementText(string locator)
         {
             return GetElement(locator).Text;
-        }
-
-        internal static string GetNewWindowHandle(List<string> notNewHandles)
-        {
-            List<string> currentWindowHandles = GetWindowHandles();
-
-            foreach (string handle in currentWindowHandles)
-            {
-                bool newHandleFound = false;
-                foreach (string oldHandle in notNewHandles)
-                {
-                    if (handle != oldHandle)
-                    {
-                        return handle;
-                    }
-                }
-            }
-
-            throw new Exception("No new handle found");
         }
     }
 }

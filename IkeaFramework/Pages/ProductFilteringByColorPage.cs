@@ -5,7 +5,7 @@ using System.Linq;
 namespace IkeaFramework.Pages
 {
     public class ProductFilteringByColorPage
-    {     
+    {
         public static void OpenProductListPage()
         {
             Driver.NavigateToThePage("https://www.ikea.com/se/sv/cat/bord-fu004/");
@@ -15,7 +15,7 @@ namespace IkeaFramework.Pages
             string locator = "/html/body/main/div/div/div[5]/div[1]/div/div[1]/div[2]/div/button[4]";
             Common.Click(locator);
         }
-        public static void SelectColorInTheFilter(string expectedResult)
+        public static void SelectColor(string expectedResult)
         {
             string locator = $"//*[@id='{expectedResult}']";
             string toggleFilterLocator = "/html/body/main/div/div/div[5]/div[1]/div/div[1]/div[2]/div/button[4]";

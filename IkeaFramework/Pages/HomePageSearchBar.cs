@@ -22,7 +22,7 @@ namespace IkeaFramework.Pages
             Common.SendKeys(locator, expectedResult);
         }
 
-        public static bool SuggestedListOfItemsContainsPartialyInputedText(string expectedResult)
+        public static bool SuggestedListOfItemsContainPartialyInputedText(string expectedResult)
         {
             string locatorOfSuggestions = "//*[@id='search-suggestions']//*[contains(@class,'universal-item__title with-autocomplete-icon')]";
             Common.WaitForTheElementToBeVisible(locatorOfSuggestions);

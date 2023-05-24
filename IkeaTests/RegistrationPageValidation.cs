@@ -6,24 +6,22 @@ using System.Security.AccessControl;
 
 namespace IkeaTests
 {
-    internal class RegistrationPageValidation : BaseTest
+    internal class RegistrationPageValidation : BaseTestWithChrome
     {
-       [SetUp]
+        [SetUp]
         public void OpenMainPageAndCookiesAcception()
         {
             HomePage.Open();
-            HomePage.AcceptCookies();    
-        } 
+            HomePage.AcceptCookies();
+        }
 
-      [Test] 
-     public void FillFormWithValidData() 
+        [Test]
+        public void FillFormWithValidData()
         {
-            
-
             RegistrationPage.Navigate();
             RegistrationPage.ClickRadioButton_No();
             RegistrationPage.ClickOnCheckbox_NoSocialSecurityNumber();
-          
+
 
             string dateOfBirth = "1994 05 05";
             string name = "Evelina";
@@ -39,7 +37,7 @@ namespace IkeaTests
             RegistrationPage.ClickOnCheckbox_TermsAndConditions();
             RegistrationPage.ClickOnGoFurtherButton();
 
-           Assert.IsTrue(RegistrationPage.SideBannerIsDisplayed());
+            Assert.IsTrue(RegistrationPage.SideBannerIsDisplayed());
         }
     }
 }

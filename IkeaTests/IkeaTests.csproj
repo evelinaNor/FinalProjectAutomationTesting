@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="AddToCartFunction.cs" />
     <Compile Include="AutocompleteInSearchBar.cs" />
-    <Compile Include="BaseTests\BaseTest.cs" />
+    <Compile Include="BaseTests\BaseTestWithChrome.cs" />
     <Compile Include="BaseTests\BaseTestWithChromeProfile.cs" />
     <Compile Include="BaseTests\BaseTestWithEdge.cs" />
     <Compile Include="LoginFunctionalityValidation.cs" />

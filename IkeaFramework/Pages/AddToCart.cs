@@ -14,7 +14,7 @@ namespace IkeaFramework.Pages
             Driver.NavigateToThePage("https://www.ikea.com/se/sv/cat/plantor-blommor-pp003/");
         }
 
-        public static void ClickOnTheFirstProduct()
+        public static void ClickOnTheProduct()
         {
             string locator = "(//*[@data-testid='plp-product-card'])[1]//a";
             Common.Click(locator);
