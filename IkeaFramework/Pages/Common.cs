@@ -71,7 +71,7 @@ namespace IkeaFramework.Pages
 
         internal static bool WaitForTheElementThatContainsTextValue(string locator, string expectedText)
         {
-            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(15));
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(8));
 
             return wait.Until(driver => driver.FindElement(By.XPath(locator)).Text.Contains(expectedText)); ;
         }

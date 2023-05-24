@@ -33,7 +33,6 @@ namespace IkeaFramework.Pages
             Cookie cookie = new Cookie("_cs_c", "1");
             Driver.GetDriver().Manage().Cookies.AddCookie(cookie);
 
-            Thread.Sleep(TimeSpan.FromSeconds(3));
             string locator = "//*[@id='root']/div/div[3]/div[1]/form/button";
             Common.Click(locator);
         }
