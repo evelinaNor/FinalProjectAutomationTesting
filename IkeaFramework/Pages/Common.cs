@@ -121,5 +121,10 @@ namespace IkeaFramework.Pages
         {
             return GetElement(locator).Text;
         }
+
+        internal static string GetElementText(IWebElement element)
+        {
+            return element.Text;
+        }
     }
 }

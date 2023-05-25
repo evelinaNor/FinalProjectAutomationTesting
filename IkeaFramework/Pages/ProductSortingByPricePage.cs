@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace IkeaFramework.Pages
 {
@@ -29,13 +30,15 @@ namespace IkeaFramework.Pages
         public static bool ProductsAreSortedFromLowToHighPrice()
         {
             string productPriceLocator = "//*[@class='pip-price__integer']";
+            Thread.Sleep(500);
+
             List<IWebElement> prices = Common.GetElements(productPriceLocator);
 
             List<double> allPrices = new List<double>();
 
             foreach (IWebElement price in prices)
             {
-                string priceText = Common.GetElementText(productPriceLocator);
+                string priceText = Common.GetElementText(price);
                 double priceToDouble = double.Parse(priceText);
                 allPrices.Add(priceToDouble);
             }
