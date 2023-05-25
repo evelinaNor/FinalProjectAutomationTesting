@@ -1,9 +1,5 @@
 ﻿using OpenQA.Selenium;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IkeaFramework.Pages
 {
@@ -32,21 +28,19 @@ namespace IkeaFramework.Pages
 
         public static bool ProductsAreSortedFromLowToHighPrice()
         {
-            string locatorOfProductList = "//*[@id='product-list']";
-            List<IWebElement> products = Common.GetElements(locatorOfProductList);
+            string productPriceLocator = "//*[@class='pip-price__integer']";
+            List<IWebElement> prices = Common.GetElements(productPriceLocator);
 
-            List<double> prices = new List<double>();
+            List<double> allPrices = new List<double>();
 
-            foreach (IWebElement product in products)
+            foreach (IWebElement price in prices)
             {
-                string productPriceLocator = "//*[@class='pip-price__integer']";
-
                 string priceText = Common.GetElementText(productPriceLocator);
-                double price = double.Parse(priceText);
-                prices.Add(price);
+                double priceToDouble = double.Parse(priceText);
+                allPrices.Add(priceToDouble);
             }
 
-            bool isSorted = IsListSortedAscending(prices);
+            bool isSorted = IsListSortedAscending(allPrices);
             return isSorted;
         }
 

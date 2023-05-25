@@ -29,7 +29,7 @@
    Expected Result: The cart summary reflects added products quantity.
 
 - **4 Scenario: Registration page validation**
-   - 4.1. Test case: The registration page correctly validates user input and creates a new user account.
+   - 4.1. Test case: The registration page correctly validates users inputs.
      - 4.1.1 Step: Open the registration form
      - 4.1.2 Step: Select second option for not becoming IKEA Family member
      - 4.1.3 Step: Tick on checkbox ("Jag har inget svenskt personnummer")

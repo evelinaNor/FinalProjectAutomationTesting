@@ -1,10 +1,6 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.DevTools.V111.WebAuthn;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IkeaFramework.Pages
 {
@@ -35,7 +31,7 @@ namespace IkeaFramework.Pages
                 string actualText = Common.GetElementAttributeValue(locator,"aria-label");
                 if (!actualText.Contains(expectedResult))
                 {
-                    string errorMessage = $"Doesn't contain {expectedResult} text";
+                    string errorMessage = $"Doesn't contain {expectedResult} text: actual text - {actualText}";
                     throw new Exception(errorMessage);
                 }
             }

@@ -2,7 +2,6 @@
 using IkeaFramework.Pages;
 using IkeaTests.BaseTests;
 using NUnit.Framework;
-using System.Security.AccessControl;
 
 namespace IkeaTests
 {

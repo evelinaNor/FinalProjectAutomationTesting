@@ -5,7 +5,6 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Linq;
 
 namespace IkeaFramework.Pages
 {
@@ -14,6 +13,17 @@ namespace IkeaFramework.Pages
         private static IWebElement GetElement(string locator)
         {
             return Driver.GetDriver().FindElement(By.XPath(locator));
+        }
+
+        private static IWebElement GetElementInElement(IWebElement parentElement, string locatorChildElement)
+        {
+            return parentElement.FindElement(By.XPath(locatorChildElement));
+        }
+
+        private static IWebElement GetElementInElement(string locatorParentElement, string locatorChildElement)
+        {
+            IWebElement elementParent = Driver.GetDriver().FindElement(By.XPath(locatorParentElement));
+            return elementParent.FindElement(By.XPath(locatorChildElement));
         }
 
         public static List<IWebElement> GetElements(string locator)
