@@ -38,11 +38,6 @@ namespace IkeaFramework
             return driver.Value;
         }
 
-        internal static void OpenPage(string url)
-        {
-            driver.Value.Url = url;
-        }
-
         public static void ShutdownDriver()
         {
             driver.Value.Quit();

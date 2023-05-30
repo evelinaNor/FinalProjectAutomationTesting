@@ -5,7 +5,7 @@ namespace IkeaFramework.Pages
     {
         public static void Open()
         {
-            Driver.OpenPage("https://www.ikea.com/se/sv/");
+            Driver.NavigateToThePage("https://www.ikea.com/se/sv/");
         }
 
         public static void AcceptCookies()
