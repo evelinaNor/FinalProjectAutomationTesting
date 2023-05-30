@@ -9,11 +9,12 @@ namespace IkeaTests
         [Test]
         public void SortProductsFromLowToHighPrice()
         {
-            ProductSortingByPricePage.OpenListOfProducts();
-            ProductSortingByPricePage.ClickOnSortFilter();
-            ProductSortingByPricePage.SelectPriceFromLowToHigh();
+            Products.ForStudents.Open();
+            Products.Filters.Sort.Toggle();
+            Products.Filters.Sort.ByPriceLowToHigh();
+            Products.Filters.Sort.Toggle();
 
-            Assert.IsTrue(ProductSortingByPricePage.ProductsAreSortedFromLowToHighPrice());
+            Assert.IsTrue(Products.ProductsAreSortedFromLowToHighPrice());
 
         }
     }

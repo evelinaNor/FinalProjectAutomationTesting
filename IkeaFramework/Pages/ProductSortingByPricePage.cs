@@ -13,7 +13,7 @@ namespace IkeaFramework.Pages
 
         public static void ClickOnSortFilter()
         {
-            string locator = "//*[@id='content']/div/div/div/div/div/div[2]/div/button[1]";
+            string locator = "//*[@aria-label='Visa modal för sorteringsalternativ']";
             Common.Click(locator);
         }
 

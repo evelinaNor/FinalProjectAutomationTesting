@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace IkeaFramework.Pages
 {
@@ -32,23 +33,66 @@ namespace IkeaFramework.Pages
             return true;
         }
 
+        public static bool ProductsAreSortedFromLowToHighPrice()
+        {
+            string productPriceLocator = "//*[@class='pip-price__integer']";
+            Thread.Sleep(500);
+
+            List<IWebElement> prices = Common.GetElements(productPriceLocator);
+
+            List<double> allPrices = new List<double>();
+
+            foreach (IWebElement price in prices)
+            {
+                string priceText = Common.GetElementText(price);
+                double priceToDouble = double.Parse(priceText);
+                allPrices.Add(priceToDouble);
+            }
+
+            bool isSorted = Common.IsListSortedAscending(allPrices);
+            return isSorted;
+        }
+
         public class Filters
         {
             public class Color
             {
                 public static void Toggle()
                 {
-                    string locator = "/html/body/main/div/div/div[5]/div[1]/div/div[1]/div[2]/div/button[4]";
+                    string locator = "//*[@aria-label='Visa Färg']";
                     Common.Click(locator);
                 }
 
                 public static void SelectColor(string color)
                 {
                     string locator = $"//*[@id='{color}']";
-
                     Common.WaitForTheElementToBeVisible(locator);
                     Common.Click(locator);
                 }
+            }
+
+            public class Sort
+            {
+                public static void Toggle()
+                {
+                    string locator = "//*[@aria-label='Visa modal för sorteringsalternativ']";
+                    Common.Click(locator);
+                }
+
+                public static void ByPriceLowToHigh()
+                {
+                    string locator = "//*[@id='content']/div/div/div/div/div/div[2]/div[4]/div/fieldset/label[2]/span[2]";
+                    Common.WaitForTheElementToBeVisible(locator);
+                    Common.Click(locator);
+                }
+            }
+        }
+
+        public class ForStudents
+        {
+            public static void Open()
+            {
+                Driver.NavigateToThePage("https://www.ikea.com/se/sv/search/?group=Allt%20f%C3%B6r%20studenten");
             }
         }
 

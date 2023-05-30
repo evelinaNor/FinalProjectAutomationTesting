@@ -115,5 +115,18 @@ namespace IkeaFramework.Pages
         {
             return element.Text;
         }
+
+        internal static bool IsListSortedAscending(List<double> values)
+        {
+            for (int i = 1; i < values.Count; i++)
+            {
+                if (values[i] < values[i - 1])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }
