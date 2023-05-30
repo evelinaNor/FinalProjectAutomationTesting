@@ -6,7 +6,7 @@ namespace IkeaTests.BaseTests
     internal class BaseTestWithChromeProfile : BaseTest
     {
         [SetUp]
-        internal override void SetUp()
+        public override void SetUp()
         {
             string userDataDir = "C:\\Users\\Evelina\\AppData\\Local\\Google\\Chrome\\User Data";
             string profileDir = "Profile 6";

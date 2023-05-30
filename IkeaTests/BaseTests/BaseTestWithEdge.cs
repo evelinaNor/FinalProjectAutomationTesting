@@ -7,7 +7,7 @@ namespace IkeaTests.BaseTests
     internal class BaseTestWithEdge : BaseTest
     {
         [SetUp]
-        internal override void SetUp()
+        public override void SetUp()
         {
             Driver.InitializeEdgeDriver();
             OpenHomePage();

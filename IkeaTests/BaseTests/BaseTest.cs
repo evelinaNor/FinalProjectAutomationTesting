@@ -8,13 +8,13 @@ namespace IkeaTests.BaseTests
     internal class BaseTest
     {
         [SetUp]
-        internal virtual void SetUp()
+        public virtual void SetUp()
         {
             Driver.InitializeChromeDriver();
         }
 
         [TearDown]
-        internal void TearDown()
+        public void TearDown()
         {
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
             {
