@@ -15,18 +15,7 @@ namespace IkeaFramework.Pages
             return Driver.GetDriver().FindElement(By.XPath(locator));
         }
 
-        private static IWebElement GetElementInElement(IWebElement parentElement, string locatorChildElement)
-        {
-            return parentElement.FindElement(By.XPath(locatorChildElement));
-        }
-
-        private static IWebElement GetElementInElement(string locatorParentElement, string locatorChildElement)
-        {
-            IWebElement elementParent = Driver.GetDriver().FindElement(By.XPath(locatorParentElement));
-            return elementParent.FindElement(By.XPath(locatorChildElement));
-        }
-
-        public static List<IWebElement> GetElements(string locator)
+        internal static List<IWebElement> GetElements(string locator)
         {
             return Driver.GetDriver().FindElements(By.XPath(locator)).ToList();
         }
