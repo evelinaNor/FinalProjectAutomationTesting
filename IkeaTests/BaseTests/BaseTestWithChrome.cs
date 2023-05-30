@@ -7,7 +7,7 @@ namespace IkeaTests.BaseTests
         internal override void SetUp()
         {
             base.SetUp();
-            base.OpenHomePage();
+            OpenHomePage();
         }
     }
 }

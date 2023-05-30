@@ -10,9 +10,9 @@ namespace IkeaTests
         public void AutocompleteSuggestionsWithPartialSearchedItemInput()
         {
             string expectedResult = "mat";
-            HomePageSearchBar.EnterSearchedItemPartialTitle(expectedResult);
+            SearchBar.EnterSearchedItemPartialTitle(expectedResult);
 
-            bool containsExpectedText = HomePageSearchBar.SuggestedListOfItemsContainPartialyInputedText(expectedResult);
+            bool containsExpectedText = SearchBar.SuggestedListOfItemsContainPartialyInputedText(expectedResult);
             Assert.IsTrue(containsExpectedText);
         }
     }

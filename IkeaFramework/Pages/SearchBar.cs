@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace IkeaFramework.Pages
 {
-    public class HomePageSearchBar
+    public class SearchBar
     {
         public static void ClickOnTheSearchBar()
         {
