@@ -19,7 +19,7 @@ namespace IkeaTests
             string expectedQuantity = "2";
 
             Products.InteriorAndDecoration.PlantsAndFlowers.Open();
-            Products.InteriorAndDecoration.PlantsAndFlowers.ClickOnTheProduct();
+            Products.InteriorAndDecoration.PlantsAndFlowers.ClickOnFirstProduct();
             Products.ProductPage.ClickOnTheQantityInput();
             Products.ProductPage.EnterQuantity(expectedQuantity);
             Products.ProductPage.ClickOnAddToCartButton();
