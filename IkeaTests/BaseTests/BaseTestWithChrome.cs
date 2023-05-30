@@ -1,26 +1,13 @@
-﻿using IkeaFramework;
-using NUnit.Framework;
-using NUnit.Framework.Interfaces;
+﻿using IkeaFramework.Pages;
 
 namespace IkeaTests.BaseTests
 {
-    internal class BaseTestWithChrome
+    internal class BaseTestWithChrome : BaseTest
     {
-        [SetUp]
-        public void SetUp()
+        public override void SetUp()
         {
-            Driver.InitializeChromeDriver();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
-            {
-                string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
-                TestContext.AddTestAttachment(screenshotFilePath);
-            }
-            Driver.ShutdownDriver();
+            base.SetUp();
+            OpenHomePage();
         }
     }
 }

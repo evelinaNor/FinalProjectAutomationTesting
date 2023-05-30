@@ -6,23 +6,15 @@ namespace IkeaTests
 {
     internal class SortProductsByLowToHighPrice : BaseTestWithEdge
     {
-        [SetUp]
-
-        public void OpenMainPageAndCookiesAcception()
-        {
-            HomePage.Open();
-            HomePage.AcceptCookies();
-        }
-
         [Test]
         public void SortProductsFromLowToHighPrice()
         {
-            ProductSortingByPricePage.OpenListOfProducts();
-            ProductSortingByPricePage.ClickOnSortFilter();
-            ProductSortingByPricePage.SelectPriceFromLowToHigh();
+            Products.ForStudents.Open();
+            Products.Filters.Sort.Toggle();
+            Products.Filters.Sort.ByPriceLowToHigh();
+            Products.Filters.Sort.Toggle();
 
-            Assert.IsTrue(ProductSortingByPricePage.ProductsAreSortedFromLowToHighPrice());
-
+            Assert.IsTrue(Products.ProductsAreSortedFromLowToHighPrice());
         }
     }
 }

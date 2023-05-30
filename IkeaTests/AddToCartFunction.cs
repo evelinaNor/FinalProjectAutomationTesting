@@ -6,26 +6,19 @@ namespace IkeaTests
 {
     internal class AddToCartFunction : BaseTestWithChrome
     {
-        [SetUp]
-        public void OpenMainPageAndCookiesAcception()
-        {
-            HomePage.Open();
-            HomePage.AcceptCookies();
-        }
-
         [Test]
         public void AddToCartFunctionality()
         {
             string expectedQuantity = "2";
 
-            AddToCart.OpenProductListPage();
-            AddToCart.ClickOnTheProduct();
-            AddToCart.ClickOnTheQantityInput();
-            AddToCart.EnterQuantity(expectedQuantity);
-            AddToCart.ClickOnAddToCartButton();
-            AddToCart.ClickOnContinueToTheCartLink();
+            Products.InteriorAndDecoration.PlantsAndFlowers.Open();
+            Products.InteriorAndDecoration.PlantsAndFlowers.ClickOnFirstProduct();
+            Products.ProductPage.ClickOnTheQantityInput();
+            Products.ProductPage.EnterQuantity(expectedQuantity);
+            Products.ProductPage.ClickOnAddToCartButton();
+            Products.ProductPage.ClickOnContinueToTheCartLink();
 
-            string actualQuantityOfTheCart = AddToCart.GetCartQuantity();
+            string actualQuantityOfTheCart = Cart.GetCartQuantity();
 
             Assert.AreEqual(expectedQuantity, actualQuantityOfTheCart);
         }

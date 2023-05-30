@@ -6,20 +6,13 @@ namespace IkeaTests
 {
     internal class AutocompleteInSearchBar : BaseTestWithChrome
     {
-        [SetUp]
-        public void OpenMainPageAndCookiesAcception()
-        {
-            HomePage.Open();
-            HomePage.AcceptCookies();
-        }
-
         [Test]
         public void AutocompleteSuggestionsWithPartialSearchedItemInput()
         {
             string expectedResult = "mat";
-            HomePageSearchBar.EnterSearchedItemPartialTitle(expectedResult);
+            SearchBar.EnterSearchedItemPartialTitle(expectedResult);
 
-            bool containsExpectedText = HomePageSearchBar.SuggestedListOfItemsContainPartialyInputedText(expectedResult);
+            bool containsExpectedText = SearchBar.SuggestedListOfItemsContainPartialyInputedText(expectedResult);
             Assert.IsTrue(containsExpectedText);
         }
     }

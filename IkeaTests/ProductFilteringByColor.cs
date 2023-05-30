@@ -6,23 +6,17 @@ namespace IkeaTests
 {
     internal class ProductFilteringByColor : BaseTestWithChrome
     {
-        [SetUp]
-        public void OpenMainPageAndCookiesAcception()
-        {
-            HomePage.Open();
-            HomePage.AcceptCookies();
-        }
-
         [Test]
         public void ProductColorFilterSelectionSortsProductsAccordingly()
         {
             string expectedResult = "svart";
 
-            ProductFilteringByColorPage.OpenProductListPage();
-            ProductFilteringByColorPage.ToggleTheColorFilter();
-            ProductFilteringByColorPage.SelectColor(expectedResult);
+            Products.Furniture.Tables.Open();
+            Products.Filters.Color.Toggle();
+            Products.Filters.Color.SelectColor(expectedResult);
+            Products.Filters.Color.Toggle();
 
-            bool containsExpectedText = ProductFilteringByColorPage.ProductHeaderSectionContainsColorText(expectedResult);
+            bool containsExpectedText = Products.EachProductHeaderSectionContainsColorText(expectedResult);
             Assert.IsTrue(containsExpectedText);
         }
     }

@@ -1,5 +1,4 @@
-﻿using IkeaFramework;
-using IkeaFramework.Pages;
+﻿using IkeaFramework.Pages;
 using IkeaTests.BaseTests;
 using NUnit.Framework;
 
@@ -7,20 +6,12 @@ namespace IkeaTests
 {
     internal class RegistrationPageValidation : BaseTestWithChrome
     {
-        [SetUp]
-        public void OpenMainPageAndCookiesAcception()
-        {
-            HomePage.Open();
-            HomePage.AcceptCookies();
-        }
-
         [Test]
         public void FillFormWithValidData()
         {
             RegistrationPage.Navigate();
             RegistrationPage.ClickRadioButton_No();
             RegistrationPage.ClickOnCheckbox_NoSocialSecurityNumber();
-
 
             string dateOfBirth = "1994 05 05";
             string name = "Evelina";

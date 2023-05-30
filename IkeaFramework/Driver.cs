@@ -25,7 +25,7 @@ namespace IkeaFramework
             driver.Value = new EdgeDriver(options);
         }
 
-        public static void InitializeDriver(string userDataDir, string profileDir)
+        public static void InitializeChromeDriverWithProfile(string userDataDir, string profileDir)
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArgument($"--user-data-dir={userDataDir}");
@@ -36,11 +36,6 @@ namespace IkeaFramework
         internal static IWebDriver GetDriver()
         {
             return driver.Value;
-        }
-
-        internal static void OpenPage(string url)
-        {
-            driver.Value.Url = url;
         }
 
         public static void ShutdownDriver()
