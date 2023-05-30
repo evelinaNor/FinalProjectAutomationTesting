@@ -15,19 +15,18 @@ namespace IkeaTests
         [Test]
         public void LoginSuccessfullyWithEmail()
         {
-            LoginPage.Naviagte();
+            LoginPage.Navigate();
 
             string email = "karolka789456@gmail.com";
             string password = "Slaptazodis123";
             string expectedUserName = "Karolina";
 
-       
             LoginPage.EnterEmail(email);
             LoginPage.EnterPassword(password);
             LoginPage.ClickOnButtonContinue();
     
-            Assert.IsTrue(LoginPage.UsersIconDisplayesUsersName(expectedUserName));
-            LoginPage.Logout();
+            Assert.IsTrue(HomePage.UsersIconDisplayesUsersName(expectedUserName));
+            HomePage.Logout();
         }
     }
 }

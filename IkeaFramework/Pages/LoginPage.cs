@@ -4,9 +4,10 @@ namespace IkeaFramework.Pages
 {
     public class LoginPage
     {
-        public static void Naviagte()
+        public static void Navigate()
         {
-            Driver.NavigateToThePage("https://www.ikea.com/se/sv/profile/login?itm_campaign=logged-out&itm_element=slider&itm_content=login");
+            //Driver.NavigateToThePage("https://www.ikea.com/se/sv/profile/login?itm_campaign=logged-out&itm_element=slider&itm_content=login")
+            Driver.NavigateToThePage("https://www.ikea.com/se/sv/profile/login");
         }
 
         public static void EnterEmail(string email)
@@ -31,22 +32,8 @@ namespace IkeaFramework.Pages
             Common.Click(locator);
         }
 
-        public static bool UsersIconDisplayesUsersName(string usersName)
-        {
-            string locator = "//*[@id='loyalty-modal-button']/span";
-            Common.WaitForTheElementThatContainsTextValue(locator, usersName);
 
-            return true;
-        }
 
-        public static void Logout()
-        {
-            string iconLocator = "//*[@id='loyalty-modal-button']/span";
-            Common.Click(iconLocator);
-
-            string logOutButton = "//*[@id='header__button']/span";
-            Common.WaitForTheElementToBeVisible(logOutButton);
-            Common.Click(logOutButton);
-        }
+        
     }
 }
