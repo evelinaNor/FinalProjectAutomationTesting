@@ -6,13 +6,6 @@ namespace IkeaTests
 {
     internal class AutocompleteInSearchBar : BaseTestWithChrome
     {
-        [SetUp]
-        public void OpenMainPageAndCookiesAcception()
-        {
-            HomePage.Open();
-            HomePage.AcceptCookies();
-        }
-
         [Test]
         public void AutocompleteSuggestionsWithPartialSearchedItemInput()
         {

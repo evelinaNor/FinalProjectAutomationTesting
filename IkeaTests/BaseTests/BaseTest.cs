@@ -1,19 +1,20 @@
 ﻿using IkeaFramework;
 using NUnit.Framework.Interfaces;
 using NUnit.Framework;
+using IkeaFramework.Pages;
 
 namespace IkeaTests.BaseTests
 {
     internal class BaseTest
     {
         [SetUp]
-        public virtual void SetUp()
+        internal virtual void SetUp()
         {
             Driver.InitializeChromeDriver();
         }
 
         [TearDown]
-        public void TearDown()
+        internal void TearDown()
         {
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
             {
@@ -21,6 +22,12 @@ namespace IkeaTests.BaseTests
                 TestContext.AddTestAttachment(screenshotFilePath);
             }
             Driver.ShutdownDriver();
+        }
+
+        internal void OpenHomePage()
+        {
+            HomePage.Open();
+            HomePage.AcceptCookies();
         }
     }
 }

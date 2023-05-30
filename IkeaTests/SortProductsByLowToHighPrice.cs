@@ -6,14 +6,6 @@ namespace IkeaTests
 {
     internal class SortProductsByLowToHighPrice : BaseTestWithEdge
     {
-        [SetUp]
-
-        public void OpenMainPageAndCookiesAcception()
-        {
-            HomePage.Open();
-            HomePage.AcceptCookies();
-        }
-
         [Test]
         public void SortProductsFromLowToHighPrice()
         {

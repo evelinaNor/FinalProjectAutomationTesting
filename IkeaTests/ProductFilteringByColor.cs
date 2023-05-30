@@ -6,13 +6,6 @@ namespace IkeaTests
 {
     internal class ProductFilteringByColor : BaseTestWithChrome
     {
-        [SetUp]
-        public void OpenMainPageAndCookiesAcception()
-        {
-            HomePage.Open();
-            HomePage.AcceptCookies();
-        }
-
         [Test]
         public void ProductColorFilterSelectionSortsProductsAccordingly()
         {
