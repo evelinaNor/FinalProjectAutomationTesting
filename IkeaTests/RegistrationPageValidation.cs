@@ -13,7 +13,6 @@ namespace IkeaTests
             RegistrationPage.ClickRadioButton_No();
             RegistrationPage.ClickOnCheckbox_NoSocialSecurityNumber();
 
-
             string dateOfBirth = "1994 05 05";
             string name = "Evelina";
             string surname = "Norvilaite";

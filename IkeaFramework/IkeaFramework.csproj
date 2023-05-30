@@ -62,7 +62,6 @@
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\SearchBar.cs" />
     <Compile Include="Pages\LoginPage.cs" />
-    <Compile Include="Pages\ProductSortingByPricePage.cs" />
     <Compile Include="Pages\RegistrationPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

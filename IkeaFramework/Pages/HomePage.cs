@@ -1,5 +1,4 @@
-﻿
-namespace IkeaFramework.Pages
+﻿namespace IkeaFramework.Pages
 {
     public class HomePage
     {

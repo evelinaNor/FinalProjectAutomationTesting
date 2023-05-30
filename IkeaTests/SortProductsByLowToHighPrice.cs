@@ -15,7 +15,6 @@ namespace IkeaTests
             Products.Filters.Sort.Toggle();
 
             Assert.IsTrue(Products.ProductsAreSortedFromLowToHighPrice());
-
         }
     }
 }

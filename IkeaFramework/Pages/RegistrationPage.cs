@@ -1,5 +1,4 @@
-﻿
-namespace IkeaFramework.Pages
+﻿namespace IkeaFramework.Pages
 {
     public class RegistrationPage
     {
@@ -55,7 +54,6 @@ namespace IkeaFramework.Pages
         {
             string locator = "//*[@id='regular-signup-form-acceptPrivacyPolicy']";
             Common.ScrollUntilElementIsClickable(locator);
-
         }
 
         public static void ClickOnGoFurtherButton()
@@ -70,7 +68,6 @@ namespace IkeaFramework.Pages
             Common.WaitForTheElementToBeVisible(locator);
 
             return true;
-
         }
     }
 }

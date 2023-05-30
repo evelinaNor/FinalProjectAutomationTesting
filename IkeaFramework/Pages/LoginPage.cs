@@ -6,7 +6,6 @@ namespace IkeaFramework.Pages
     {
         public static void Navigate()
         {
-            //Driver.NavigateToThePage("https://www.ikea.com/se/sv/profile/login?itm_campaign=logged-out&itm_element=slider&itm_content=login")
             Driver.NavigateToThePage("https://www.ikea.com/se/sv/profile/login");
         }
 
@@ -31,9 +30,5 @@ namespace IkeaFramework.Pages
             string locator = "//*[@id='root']/div/div[3]/div[1]/form/button";
             Common.Click(locator);
         }
-
-
-
-        
     }
 }
